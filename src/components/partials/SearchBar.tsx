@@ -1,23 +1,21 @@
 import { RiArrowDropDownLine, RiSearchLine } from "react-icons/ri";
 function SearchBar() {
   return (
-    <form className="w-full pt-0 p-[5px] bg-primaryContrast lg:p-0">
-      <div className="hidden lg:block min-w-[175px] h-[40px] bg-gray-200">
+    <form className="w-full pt-0 p-[5px] bg-primaryContrast lg:p-0 lg:flex">
+      <div className="relative w-1/2 hidden lg:block h-[40px]">
         <select
-          name=""
-          id=""
-          className="invisible h-px w-px min-h-[40px] -m-px"
-        ></select>
-        <span className="w-full inline-block h-[40px]">
-          <span className="block pt-1.5 pb-1 pr-8 pl-3 h-full relative">
-            <span className="text-[0.7rem] text-[#505050]">
-              TOUS LES PRODUITS
-            </span>
-            <span className="absolute right-1 top-1/2 -translate-y-1/2">
-              <RiArrowDropDownLine size={30} color="#505050" />
-            </span>
-          </span>
-        </span>
+          className="appearance-none h-[40px] pl-3 w-full bg-gray-200"
+          placeholder="Rechercher un produit"
+        >
+          <option value="all">Tous les produits</option>
+          <option value="all">Tous les produits</option>
+          <option value="all">Tous les produits</option>
+          <option value="all">Tous les produits</option>
+        </select>
+        <RiArrowDropDownLine
+          size={30}
+          className="absolute right-0 top-0 bottom-0 m-auto mr-3 pointer-events-none"
+        />
       </div>
       <div className="bg-white h-[40px] relative w-full">
         <input

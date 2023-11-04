@@ -1,40 +1,34 @@
-import { PiTextAlignJustify } from "react-icons/pi";
-import { RiArrowRightSLine } from "react-icons/ri";
-import { BsCart3, BsPersonFill } from "react-icons/bs";
-import Logo from "../../assets/images/logo.png";
-import SearchBar from "./SearchBar";
-function Menu() {
+import { useState } from "react";
+type isMenuOpen = {
+  isMenuOpen: boolean;
+};
+function Menu({ isMenuOpen }: isMenuOpen) {
   return (
-    <header className="w-full bg-primaryContrast">
-      <div className="flex items-center gap-2 lg:container lg:mx-auto lg:h-[80px] lg:gap-6">
-        <div className="p-[5px] border-r border-primary lg:hidden">
-          <PiTextAlignJustify size={40} color="white" />
-        </div>
-        <div className="px-[5px] py-[1px] border-r border-primary flex-grow lg:grow-0 lg:border-r-0">
-          <img
-            src={Logo}
-            alt="E-commerce website logo"
-            className="max-w-full h-12 mx-auto"
-          />
-        </div>
-        <div className="hidden flex-grow lg:block">
-          <SearchBar />
-        </div>
-        <div className="text-white border-primary border-r p-[5px] lg:border-r-0 lg:flex lg:flex-col-reverse lg:items-center">
-          <p className="inline">
-            Se connecter <RiArrowRightSLine className="inline" />
-          </p>
-          <BsPersonFill className="inline lg:block" size={40} />
-        </div>
-        <div className="text-white p-[5px] lg:flex lg:flex-col">
-          <BsCart3 size={40} />
-          <p className="hidden lg:block">Panier</p>
-        </div>
+    <nav
+      className={`bg-primary lg:h-[40px] menu lg:relative absolute top-[50px] w-full lg:top-0 lg:block ${
+        isMenuOpen ? "block" : "hidden"
+      }`}
+    >
+      <div className="w-full xl:container xl:mx-auto h-full">
+        <ul className="lg:flex text-center text-white font-bold items-center justify-center h-full">
+          <li>
+            <a href="/">TOUS NOS PRODUITS</a>
+          </li>
+          <li>
+            <a href="/">MEILLEURES VENTES</a>
+          </li>
+          <li>
+            <a href="/">NOUVEAUTÉS</a>
+          </li>
+          <li>
+            <a href="/">PROMOTIONS</a>
+          </li>
+          <li>
+            <a href="/">NOUS CONTACTER</a>
+          </li>
+        </ul>
       </div>
-      <div className="lg:hidden">
-        <SearchBar />
-      </div>
-    </header>
+    </nav>
   );
 }
 

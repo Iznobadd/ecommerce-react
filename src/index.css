@@ -22,13 +22,7 @@ h3 {
 }
 
 @media (max-width: 1024px) {
-  .menu {
-    @apply w-[300px] bg-primary z-10 absolute h-auto hidden;
-  }
   .menu li {
-    @apply w-full border-0 !border-l-0 h-[50px] border-b border-primaryContrast;
-  }
-  .menu ul {
-    @apply flex flex-row flex-wrap;
+    @apply border-r-0 w-full border-b py-3;
   }
 }
