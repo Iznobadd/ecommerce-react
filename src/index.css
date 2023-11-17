@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-text;
+  @apply font-text bg-fond;
 }
 h1,
 h2,
